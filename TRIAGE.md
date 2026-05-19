@@ -23,14 +23,26 @@ For each new issue:
 
 When routing to another repo:
 
-1. Create a sanitized downstream issue in the destination repo.
-2. Include only public-safe details.
-3. Link the downstream issue from the intake issue.
-4. Link the intake issue from the downstream issue when appropriate.
-5. Add `routed` to the intake issue.
-6. Close the intake issue when the downstream issue is the active tracking location.
+1. Do not transfer the intake issue out of `FilOzone/foc-problems`.
+2. Create a sanitized downstream issue in the destination repo.
+3. Include only public-safe details.
+4. Add a formal GitHub issue relationship between the intake issue and the downstream issue.
+5. Link the downstream issue from the intake issue as a human-readable backup.
+6. Link the intake issue from the downstream issue when appropriate.
+7. Add `routed` to the intake issue.
+8. Close the intake issue when the downstream issue is the active tracking location.
 
-If a matching issue already exists, link it, add `duplicate`, and close the intake issue with a short note.
+The `foc-problems` issue should remain the intake record. The destination repo issue is the active engineering or documentation tracking issue.
+
+## Duplicates
+
+If a matching issue already exists:
+
+1. Add `duplicate` to the intake issue.
+2. Use GitHub's "Close as duplicate" functionality so the duplicate relationship is recorded.
+3. Add a short comment if extra context would help future triagers.
+
+If GitHub's duplicate close action is not available in the current UI, link the canonical issue in a comment and close the intake issue as a duplicate.
 
 ## Security-Sensitive Reports
 
