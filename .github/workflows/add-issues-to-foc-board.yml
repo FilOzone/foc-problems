@@ -1,0 +1,28 @@
+######################################################################################
+# READ THIS FIRST
+# Adapted from the workflow authored in FilOzone/github-mgmt and copied to other repos.
+# See https://github.com/FilOzone/github-mgmt/blob/master/files/workflows/add-issues-and-prs-to-fs-project-board.yml
+# and https://github.com/FilOzone/early-repair/pull/13 for the source pattern.
+######################################################################################
+
+# This action adds new foc-problems intake issues to the FOC project board.
+# It is triggered when a new issue is opened.
+# It assumes a `FILOZZY_CI_ADD_TO_PROJECT` secret is set in the repo or org.
+# This secret should have the permissions outlined in:
+# https://github.com/actions/add-to-project?tab=readme-ov-file#creating-a-pat-and-adding-it-to-your-repository
+name: Add issues to FOC project board
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    name: Add new intake issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v1.0.2
+        with:
+          project-url: https://github.com/orgs/FilOzone/projects/14
+          github-token: ${{ secrets.FILOZZY_CI_ADD_TO_PROJECT }}

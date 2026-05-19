@@ -15,9 +15,12 @@ For each new issue:
 
 1. Confirm whether it is a user problem, question, duplicate, or security-sensitive report.
 2. Apply labels that describe the current state.
-3. Ask for missing information if the issue cannot be triaged.
-4. If it came from Slack, link the relevant thread.
-5. Decide whether to handle it here or route it to a destination repo.
+3. Confirm the issue was added to the FOC project board.
+4. Ask for missing information if the issue cannot be triaged.
+5. If it came from Slack, link the relevant thread.
+6. Decide whether to handle it here or route it to a destination repo.
+
+New issues should be added to the FOC project board automatically by the `Add issues to FOC project board` GitHub Actions workflow. If a new issue is missing from the board, check the workflow run and confirm the `FILOZZY_CI_ADD_TO_PROJECT` secret is available to this repository.
 
 ## Routing
 
