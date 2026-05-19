@@ -1,8 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Security vulnerability report
-    url: https://github.com/FilOzone/.github/blob/main/SECURITY.md
-    about: Do not report security vulnerabilities in this public repo. Use the FilOzone security process instead.
   - name: Filecoin Slack
     url: https://filecoin.io/slack/
     about: For quick back-and-forth discussion, join the Filecoin Slack and use #fil-foc.
